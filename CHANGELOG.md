@@ -1,3 +1,11 @@
+# [2.15.0](https://github.com/pagerinc/eslint-plugin-css-modules/compare/v2.14.1...v2.15.0) (2023-10-13)
+
+
+### Features
+
+* allow usage of mixins ([d525a31](https://github.com/pagerinc/eslint-plugin-css-modules/commit/d525a31c1c6b33fc4f2b7cb8e699715bbba17b2d))
+* allow usage of mixins 2 ([3f59e25](https://github.com/pagerinc/eslint-plugin-css-modules/commit/3f59e253635e5268e159f92ca23e7c8dfc822649))
+
 ## [2.14.1](https://github.com/pagerinc/eslint-plugin-css-modules/compare/v2.14.0...v2.14.1) (2023-10-13)
 
 
