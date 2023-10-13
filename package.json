@@ -1,6 +1,6 @@
 {
   "name": "@pager/eslint-plugin-css-modules",
-  "version": "2.16.3",
+  "version": "2.17.0",
   "description": "Checks that you are using the existent css/scss/less classes, no more no less",
   "main": "build/index.js",
   "files": [
@@ -28,7 +28,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/atfzl/eslint-plugin-css-modules.git"
+    "url": "git://github.com/pagerinc/eslint-plugin-css-modules.git"
   },
   "license": "MIT",
   "peerDependencies": {
