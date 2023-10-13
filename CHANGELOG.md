@@ -1,3 +1,10 @@
+## [2.14.1](https://github.com/pagerinc/eslint-plugin-css-modules/compare/v2.14.0...v2.14.1) (2023-10-13)
+
+
+### Bug Fixes
+
+* bump version ([73c0900](https://github.com/pagerinc/eslint-plugin-css-modules/commit/73c0900d0c3587b3dc1bd095f59046d0a30cc27f))
+
 # [2.14.0](https://github.com/pagerinc/eslint-plugin-css-modules/compare/v2.13.0...v2.14.0) (2023-10-13)
 
 
