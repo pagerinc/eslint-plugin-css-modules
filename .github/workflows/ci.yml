@@ -40,9 +40,8 @@ jobs:
       - name: 🚀 Release
         uses: cycjimmy/semantic-release-action@v3
         with:
-          extra_plugins: |
+          extends: |
             @pager/web-semantic-release-config
-            @semantic-release/exec
         env:
           NPM_PUBLISH: 'true'
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
