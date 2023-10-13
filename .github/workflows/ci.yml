@@ -1,0 +1,50 @@
+name: Continuous Integration
+on:
+  push:
+    branches:
+      - master
+      - beta
+  pull_request:
+    branches:
+      - master
+      - '**/*'
+env:
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+  PAGER_JFROG_NPM_TOKEN: ${{ secrets.PAGER_JFROG_NPM_TOKEN }}
+  HUSKY_SKIP_INSTALL: 'true'
+jobs:
+  ci:
+    name: 🏗 CI
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[no github actions]')"
+    steps:
+      - name: ⬇️ Checkout Repo
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          fetch-depth: 0 # Required for Chromatic to work
+      - name: ⎔ Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+      - name: 📥 Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: 🔬 Lint
+        run: yarn lint
+      - name: 🧪 Test
+        run: yarn test
+      - name: ⚙ Build
+        run: npm run build
+        env:
+          NODE_ENV: production
+      - name: 🚀 Release
+        uses: cycjimmy/semantic-release-action@v3
+        with:
+          extra_plugins: |
+            @pager/web-semantic-release-config
+            @semantic-release/exec
+        env:
+          NPM_PUBLISH: 'true'
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          SEMANTIC_RELEASE_PACKAGE: 'Eslint Plugin - CSS Modules'
+          SKIP_MESSAGE: '[no github actions]'

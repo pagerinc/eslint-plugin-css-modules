@@ -13,9 +13,7 @@
     "lint": "eslint lib test",
     "test": "concurrently 'npm run test:rules' 'npm run test:mocha'",
     "test:rules": "babel-node ./test/lib/rules",
-    "test:mocha": "mocha 'test/**/*.test.js'",
-    "my-pre-publish": "concurrently 'npm run test' 'npm run build'",
-    "my-publish": "npm run my-pre-publish && yarn publish"
+    "test:mocha": "mocha 'test/**/*.test.js'"
   },
   "engines": {
     "node": ">=4.0.0"
