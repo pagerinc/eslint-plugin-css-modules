@@ -1,4 +1,4 @@
-/* eslint css-modules/no-unused-class: [2, { markAsUsed: ['container'] }] */
+/* eslint @pager/css-modules/no-unused-class: [2, { markAsUsed: ['container'] }] */
 
 import s from './foo.scss';
 

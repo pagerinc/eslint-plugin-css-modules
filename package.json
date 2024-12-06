@@ -1,6 +1,6 @@
 {
-  "name": "eslint-plugin-css-modules",
-  "version": "2.12.0",
+  "name": "@pager/eslint-plugin-css-modules",
+  "version": "2.18.0",
   "description": "Checks that you are using the existent css/scss/less classes, no more no less",
   "main": "build/index.js",
   "files": [
@@ -12,8 +12,7 @@
     "build": "rm -rf build && babel lib -d build",
     "lint": "eslint lib test",
     "test": "mocha 'test/**/*.test.js' --compilers js:@babel/register",
-    "my-pre-publish": "npm run test && npm run build",
-    "my-publish": "npm run my-pre-publish && yarn publish"
+    "prepublishOnly": "npm run build"
   },
   "engines": {
     "node": ">=4.0.0"
@@ -24,14 +23,9 @@
     "eslint-plugin",
     "css-modules"
   ],
-  "author": {
-    "name": "Atif Afzal",
-    "email": "atif5801@gmail.com",
-    "url": "http://atfzl.me"
-  },
   "repository": {
     "type": "git",
-    "url": "git://github.com/atfzl/eslint-plugin-css-modules.git"
+    "url": "git://github.com/pagerinc/eslint-plugin-css-modules.git"
   },
   "license": "MIT",
   "peerDependencies": {
@@ -46,6 +40,7 @@
     "@babel/plugin-transform-flow-strip-types": "^7.22.5",
     "@babel/preset-env": "^7.22.20",
     "@babel/register": "^7.22.15",
+    "@pager/web-semantic-release-config": "^4.1.5",
     "chai": "^4.3.9",
     "eslint": "^8.50.0",
     "eslint-config-standard": "^17.1.0",
@@ -58,7 +53,7 @@
     "nodemon": "^3.0.1"
   },
   "dependencies": {
-    "gonzales-pe": "^4.3.0",
-    "lodash": "^4.17.2"
+    "gonzales-pe": "4.3.0",
+    "lodash": "4.17.21"
   }
 }

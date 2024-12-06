@@ -6,7 +6,6 @@ import { test } from 'mocha';
 export function addFilenameOption (testCase) {
   return {
     ...testCase,
-    // TODO:  Find a way to remove this.
     filename: path.resolve(__dirname, './files/foo.js'),
   };
 }
