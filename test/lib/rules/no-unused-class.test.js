@@ -368,7 +368,7 @@ describe('no-unused-class', function () {
             </div>
           );
         `,
-        errors: ["File not ./fileThatDoesNotExist.scss found"]
+        errors: ['File ./fileThatDoesNotExist.scss not found']
       },
       {
         name: "file that can't be parsed should give an error",
