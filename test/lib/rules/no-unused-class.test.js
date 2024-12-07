@@ -17,7 +17,7 @@ describe('no-unused-class', function () {
         code: `
           import s from 'test/files/noUndefClass1.scss';
   
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.container}></div>
           );
         `,
@@ -27,7 +27,7 @@ describe('no-unused-class', function () {
         code: `
           import s from './noUnusedClass1.scss';
   
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.foo}>
               <div className={s['bar']}>
                 <span className={s.bold}></span>
@@ -41,7 +41,7 @@ describe('no-unused-class', function () {
         code: `
           import s from './noUnusedClass2.scss';
   
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.foo}>
               <span className="bar"></span>
             </div>
@@ -53,7 +53,7 @@ describe('no-unused-class', function () {
         code: `
           import s from './export1.scss';
   
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.bar}></div>
           );
         `,
@@ -63,7 +63,7 @@ describe('no-unused-class', function () {
         code: `
           import s from './composes1.scss';
   
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.bar}>
               <span className={s.baz}></span>
             </div>
@@ -75,7 +75,7 @@ describe('no-unused-class', function () {
         code: `
           import s from './composesMultiple1.scss';
   
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.bar}>
               <span className={s.baz}></span>
             </div>
@@ -87,7 +87,7 @@ describe('no-unused-class', function () {
         code: `
           import s from './extend1.scss';
   
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.bar}>
               <span className={s.baz}></span>
             </div>
@@ -99,7 +99,7 @@ describe('no-unused-class', function () {
         code: `
           import s from './parentSelector7.scss';
   
-          export default Foo = () => (
+          export const Foo = () => (
             <div>
               <span className={s.foo_bar}></span>
               <span className={s.foo_baz}></span>
@@ -112,7 +112,7 @@ describe('no-unused-class', function () {
         code: `
           import s from './noUnusedClass3.scss';
   
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.fooBar}>
               <div className={s.barFoo}></div>
               <div className={s.alreadyCamelCased}></div>
@@ -127,7 +127,7 @@ describe('no-unused-class', function () {
         code: `
           import s from './noUnusedClass3.scss';
   
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s['foo-bar']}>
               <div className={s['bar-foo']}></div>
               <div className={s.alreadyCamelCased}></div>
@@ -142,7 +142,7 @@ describe('no-unused-class', function () {
         code: `
           import s from './noUnusedClass3.scss';
   
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.fooBar}>
               <div className={s.barFoo}></div>
               <div className={s.alreadyCamelCased}></div>
@@ -157,7 +157,7 @@ describe('no-unused-class', function () {
         code: `
           import s from './noUnusedClass3.scss';
   
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s['foo-bar']}>
               <div className={s['bar-foo']}></div>
               <div className={s.alreadyCamelCased}></div>
@@ -172,7 +172,7 @@ describe('no-unused-class', function () {
         code: `
           import s from './noUnusedClass3.scss';
   
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.fooBar}>
               <div className={s.barFoo}></div>
               <div className={s.alreadyCamelCased}></div>
@@ -187,7 +187,7 @@ describe('no-unused-class', function () {
         code: `
           import s from './noUnusedClass3.scss';
   
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.fooBar}>
               <div className={s.barFoo}></div>
               <div className={s.alreadyCamelCased}></div>
@@ -204,7 +204,7 @@ describe('no-unused-class', function () {
         code: `
           import s from './noUnusedClass1.scss';
   
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.bar}></div>
           );
         `,
@@ -215,7 +215,7 @@ describe('no-unused-class', function () {
         code: `
           import s from './noUnusedClass2.scss';
   
-          export default Foo = () => (
+          export const Foo = () => (
             <div>
             </div>
           );
@@ -227,7 +227,7 @@ describe('no-unused-class', function () {
         code: `
           import s from './noUnusedClass1.less';
   
-          export default Foo = () => (
+          export const Foo = () => (
             <div>
             </div>
           );
@@ -239,7 +239,7 @@ describe('no-unused-class', function () {
         code: `
           import s from './composes1.scss';
   
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.bar}></div>
           );
         `,
@@ -250,7 +250,7 @@ describe('no-unused-class', function () {
         code: `
           import s from './composesMultiple1.scss';
   
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.bar}></div>
           );
         `,
@@ -261,7 +261,7 @@ describe('no-unused-class', function () {
         code: `
           import s from './extend1.scss';
   
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.bar}></div>
           );
         `,
@@ -272,7 +272,7 @@ describe('no-unused-class', function () {
         code: `
           import s from './parentSelector4.scss';
   
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.foo}>
               <div className={s.foo_baz}></div>
             </div>
@@ -285,7 +285,7 @@ describe('no-unused-class', function () {
         code: `
           import s from './parentSelector8.scss';
   
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.foo} />
           );
         `,
@@ -296,7 +296,7 @@ describe('no-unused-class', function () {
         code: `
           import s from './noUnusedClass3.scss';
   
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={ s.fooBar } />
           );
         `,
@@ -310,7 +310,7 @@ describe('no-unused-class', function () {
         code: `
           import s from './noUnusedClass3.scss';
   
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={ s.fooBar }>
               <div className={s.snakeCased}></div>
             </div>
@@ -326,7 +326,7 @@ describe('no-unused-class', function () {
         code: `
           import s from './noUnusedClass3.scss';
   
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s['foo-bar']}>
               <div className={s.barFoo}></div>
               <div className={s.snakeCased}></div>
@@ -344,7 +344,7 @@ describe('no-unused-class', function () {
         code: `
           import s from './noUnusedClass3.scss';
   
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s['foo-bar']}>
               <div className={s.barFoo}></div>
               <div className={s.snakeCased}></div>
@@ -356,6 +356,32 @@ describe('no-unused-class', function () {
         errors: [
           'Unused classes found in noUnusedClass3.scss: foo-bar, alreadyCamelCased, snake_cased',
         ],
+      },
+      {
+        name: 'should show errors for file that does not exist',
+        code: `
+          import s from './fileThatDoesNotExist.scss';
+
+          export const Foo = () => (
+            <div className={s.bar}>
+              <div className={s.baz}></div>
+            </div>
+          );
+        `,
+        errors: ['File ./fileThatDoesNotExist.scss not found']
+      },
+      {
+        name: "file that can't be parsed should give an error",
+        code: `
+          import s from './unparsable.scss';
+
+          export const Foo = () => (
+            <div className={s.bar}>
+              <div className={s.baz}></div>
+            </div>
+          );
+        `,
+        errors: ['Error parsing ./unparsable.scss'],
       },
     ].map((testCase) => addFilenameOption(testCase)),
   });

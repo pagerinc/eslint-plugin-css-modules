@@ -1,7 +1,7 @@
 /* eslint-env mocha */
 
-import { expect } from 'chai';
 import gonzales from 'gonzales-pe';
+import assert from 'assert';
 
 import { eliminateGlobals } from '../../../lib/core/traversalUtils';
 
@@ -16,7 +16,7 @@ describe('eliminateGlobals()', function () {
 
       eliminateGlobals(ast);
 
-      expect(ast.toString().trim()).to.be.equal('');
+      assert(ast.toString().trim() === '');
     });
 
     it('should remove :global operator and the global classes', function () {
@@ -28,7 +28,7 @@ describe('eliminateGlobals()', function () {
 
       eliminateGlobals(ast);
 
-      expect(ast.toString().trim()).to.be.equal('');
+      assert(ast.toString().trim() === '');
     });
 
     it('should only remove :global operator and the global classes', function () {
@@ -40,9 +40,7 @@ describe('eliminateGlobals()', function () {
 
       eliminateGlobals(ast);
 
-      expect(ast.toString().trim()).to.be.equal(
-        '.local1 :local(.local2) :local(.local3), .local4 {}'
-      );
+      assert(ast.toString().trim() === '.local1 :local(.local2) :local(.local3), .local4 {}');
     });
   });
 
@@ -56,7 +54,7 @@ describe('eliminateGlobals()', function () {
 
       eliminateGlobals(ast);
 
-      expect(ast.toString().trim()).to.be.equal('');
+      assert(ast.toString().trim() === '');
     });
 
     it('should remove :global() pseudo class and its argument classes', function () {
@@ -68,7 +66,7 @@ describe('eliminateGlobals()', function () {
 
       eliminateGlobals(ast);
 
-      expect(ast.toString().trim()).to.be.equal('');
+      assert(ast.toString().trim() === '');
     });
 
     it('should only remove :global() pseudo class and its argument classes', function () {
@@ -80,9 +78,7 @@ describe('eliminateGlobals()', function () {
 
       eliminateGlobals(ast);
 
-      expect(ast.toString().trim()).to.be.equal(
-        '.local1 .local2, .local3 :local(.local4) {}'
-      );
+      assert(ast.toString().trim() === '.local1 .local2, .local3 :local(.local4) {}');
     });
   });
 });

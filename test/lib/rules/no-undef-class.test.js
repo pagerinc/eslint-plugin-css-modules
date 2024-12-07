@@ -17,7 +17,7 @@ describe('no-undef-class', function () {
         code: `
           import s from 'test/files/noUndefClass1.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.container}></div>
           );
         `,
@@ -27,7 +27,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './noUndefClass1.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.container}></div>
           );
         `,
@@ -37,7 +37,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './noUndefClass1.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s['container']}></div>
           );
         `,
@@ -47,7 +47,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './noUndefClass1.scss';
 
-          export default Foo = (props) => (
+          export const Foo = (props) => (
             <div className={s[props.primary]}></div>
           );
         `,
@@ -69,7 +69,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './composes1.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.bar}>
               <div className={s.baz}></div>
             </div>
@@ -81,7 +81,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './composesMultiple1.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.bar}>
               <div className={s.baz}></div>
             </div>
@@ -93,7 +93,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './extend1.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.bar}>
               <div className={s.baz}></div>
             </div>
@@ -105,7 +105,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './parentSelector1.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.foo}>
               <div className={s.foo_bar}></div>
             </div>
@@ -117,7 +117,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './parentSelector2.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.foo}>
               <div className={s.bar}></div>
               <div className={s.bar_baz}></div>
@@ -130,7 +130,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './parentSelector3.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.foo}>
               <div className={s.foo_bar}></div>
               <div className={s.foo_baz}></div>
@@ -143,7 +143,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './parentSelector4.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.foo}>
               <div className={s.foo_bar}></div>
               <div className={s.foo_baz}></div>
@@ -156,7 +156,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './parentSelector5.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.foo}>
               <div className={s.foo_baz}></div>
               <div className={s.bar_baz}></div>
@@ -169,7 +169,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './parentSelector6.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.foo}>
               <div className={s.foo_bar}></div>
               <div className={s.foo_bar_baz}></div>
@@ -182,21 +182,9 @@ describe('no-undef-class', function () {
         code: `
           import s from './parentSelector8.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.foo}>
               <div className={s.foo_bar}></div>
-            </div>
-          );
-        `,
-      },
-      {
-        name: "file that can't be parsed should not give any error",
-        code: `
-          import s from './unparsable.scss';
-
-          export default Foo = () => (
-            <div className={s.bar}>
-              <div className={s.baz}></div>
             </div>
           );
         `,
@@ -206,7 +194,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './global1.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.local1, s.local2, s.local3, s.local4, s.local5, s.local6}>
             </div>
           );
@@ -217,7 +205,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './export1.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.bar}>
               <div className={s.myProp}>
               </div>
@@ -230,7 +218,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './noUndefClass3.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.fooBar}>
               <div className={s.barFoo}></div>
               <div className={s.alreadyCamelCased}></div>
@@ -245,7 +233,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './noUndefClass3.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s['foo-bar']}>
               <div className={s['bar-foo']}></div>
               <div className={s.alreadyCamelCased}></div>
@@ -260,7 +248,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './noUndefClass3.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.fooBar}>
               <div className={s.barFoo}></div>
               <div className={s.alreadyCamelCased}></div>
@@ -275,7 +263,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './noUndefClass3.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s['foo-bar']}>
               <div className={s['bar-foo']}></div>
               <div className={s.alreadyCamelCased}></div>
@@ -290,7 +278,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './noUndefClass3.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.fooBar}>
               <div className={s.barFoo}></div>
               <div className={s.alreadyCamelCased}></div>
@@ -305,7 +293,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './noUndefClass3.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.fooBar}>
               <div className={s.barFoo}></div>
               <div className={s.alreadyCamelCased}></div>
@@ -322,7 +310,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './noUndefClass1.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.containr}></div>
           );
         `,
@@ -333,7 +321,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './noUndefClass1.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s['containr']}></div>
           );
         `,
@@ -344,7 +332,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './global1.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.global1, s.global2, s.global3}></div>
           );
         `,
@@ -359,7 +347,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './export2.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.bar}>
               <div className={s.myProp}>
               </div>
@@ -373,7 +361,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './noUndefClass1.less';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.bold}></div>
           );
         `,
@@ -384,7 +372,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './composes1.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.bar}>
               <div className={s.bazz}></div>
             </div>
@@ -397,7 +385,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './composesMultiple1.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.bar}>
               <div className={s.bazz} />
               <div className={s.foo} />
@@ -411,7 +399,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './extend1.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.bar}>
               <div className={s.bazz}></div>
             </div>
@@ -424,7 +412,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './parentSelector1.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.foo}>
               <div className={s.foo_bar}></div>
               <div className={s.foo_baz}></div>
@@ -438,23 +426,20 @@ describe('no-undef-class', function () {
         code: `
           import s from './fileThatDoesNotExist.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.bar}>
               <div className={s.baz}></div>
             </div>
           );
         `,
-        errors: [
-          "Class or exported property 'bar' not found",
-          "Class or exported property 'baz' not found",
-        ],
+        errors: ['File ./fileThatDoesNotExist.scss not found']
       },
       {
         name: 'should detect if camel case properties are NOT defined when camelCase=true',
         code: `
           import s from './noUndefClass3.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s.fooBar}>
               <div className={s.alreadyCamelCased}></div>
               <div className={s.snakeCased}></div>
@@ -470,7 +455,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './noUndefClass3.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div className={s['foo-bar']}>
               <div className={s.alreadyCamelCased}></div>
               <div className={s.snake_cased}></div>
@@ -486,7 +471,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './noUndefClass3.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div>
               <div className={s.fooBar}></div>
               <div className={s.alreadyCamelCased}></div>
@@ -513,7 +498,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './noUndefClass3.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div>
               <div className={s.fooBar}></div>
               <div className={s.alreadyCamelCased}></div>
@@ -541,7 +526,7 @@ describe('no-undef-class', function () {
         code: `
           import s from './noUndefClass3.scss';
 
-          export default Foo = () => (
+          export const Foo = () => (
             <div>
               <div className={s.fooBar}></div>
               <div className={s.alreadyCamelCased}></div>
@@ -563,6 +548,19 @@ describe('no-undef-class', function () {
           "Class or exported property 'already-camel-cased' not found",
           "Class or exported property 'foo-baz' not found",
         ],
+      },
+      {
+        name: "file that can't be parsed should give an error",
+        code: `
+          import s from './unparsable.scss';
+
+          export const Foo = () => (
+            <div className={s.bar}>
+              <div className={s.baz}></div>
+            </div>
+          );
+        `,
+        errors: ['Error parsing ./unparsable.scss'],
       },
     ].map((testCase) => addFilenameOption(testCase)),
   });
