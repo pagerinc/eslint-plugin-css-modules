@@ -1,3 +1,10 @@
+# [2.20.0](https://github.com/pagerinc/eslint-plugin-css-modules/compare/v2.19.0...v2.20.0) (2024-12-07)
+
+
+### Features
+
+* bump version ([#4](https://github.com/pagerinc/eslint-plugin-css-modules/issues/4)) ([8dc1c0b](https://github.com/pagerinc/eslint-plugin-css-modules/commit/8dc1c0bf2c347fa9119fb86e41a8daaf575100c5))
+
 # [2.12.0](https://github.com/pagerinc/eslint-plugin-css-modules/compare/v2.11.4...v2.12.0) (2024-12-07)
 
 
