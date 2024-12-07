@@ -432,7 +432,7 @@ describe('no-undef-class', function () {
             </div>
           );
         `,
-        errors: ['File not ./fileThatDoesNotExist.scss found']
+        errors: ['File ./fileThatDoesNotExist.scss not found']
       },
       {
         name: 'should detect if camel case properties are NOT defined when camelCase=true',
